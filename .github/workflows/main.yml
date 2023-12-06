@@ -17,7 +17,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: echo ${{ github.event_name}}
-            - run: echo ${{ github.workflow_ref}}
+            - run: echo ${{ github.ref}}
+            - uses: Actions/checkout@v4
             - run: ls -a
 
     
