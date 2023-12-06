@@ -1,0 +1,23 @@
+name: Github Actions Demo
+
+on: 
+    push: 
+        branches: 
+        - main
+        paths-ignore: [.github/**]
+    pull_request: 
+        branches:
+        - main
+    schedule:
+        - cron: 15 6 * * SUN
+    workflow_dispatch: 
+
+jobs:
+    Build:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo ${{ github.event_name}}
+            - run: echo ${{ github.workflow_ref}}
+            - run: ls -a
+
+    
